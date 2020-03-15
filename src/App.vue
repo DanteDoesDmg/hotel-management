@@ -2,7 +2,7 @@
   <v-app>
     <v-content>
       <v-container fluid>
-        <floor-management/>
+        <floor-management />
       </v-container>
     </v-content>
   </v-app>
@@ -15,8 +15,6 @@ export default {
   data: () => ({
     //
   }),
-  methods: {
-
-  }
+  methods: {}
 };
 </script>

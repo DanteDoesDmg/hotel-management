@@ -33,13 +33,18 @@
           </p>
         </v-col>
       </v-row>
-      <v-row dense justify="center">
+      <v-row
+        v-for="(floor,index) in floors"
+        :key="index"
+        dense
+        justify="center"
+      >
         <v-col dense sm="8" md="6" lg="5">
-          <floor-edition :floor="testFloor" />
+          <floor-edition :floor="floor" />
         </v-col>
       </v-row>
       <v-row dense justify="center">
-        <v-btn color="primary">
+        <v-btn color="primary" @click="createNewFloor">
           Dodaj piętro
           <v-icon right>mdi-plus-circle</v-icon>
         </v-btn>
@@ -54,14 +59,17 @@
 
 <script>
 import FloorEdition from "./FloorEdition";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   components: {
     "floor-edition": FloorEdition
   },
-  computed:{
-    ...mapState('Management',['testFloor'])
+  computed: {
+    ...mapState("Management", ["floors", "testFloor"])
+  },
+  methods: {
+    ...mapActions("Management", ["createNewFloor"])
   }
 };
 </script>
