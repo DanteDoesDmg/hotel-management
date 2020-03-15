@@ -135,10 +135,10 @@ export default {
       const inputMin = Math.min(...event)
 
       switch(true){
-        case inputMax != this.textFields[2].num:
+        case inputMax != this.textFields[2].num && inputMax != -Infinity:
           this.textFields[2].num = inputMax
           break;
-        case inputMin != this.textFields[1].num:
+        case inputMin != this.textFields[1].num && inputMax!= -Infinity:
           this.textFields[2].num = inputMin
           break;
         default:
