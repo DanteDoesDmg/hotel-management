@@ -7,6 +7,10 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import store from '@/store/store'
 
+
+import RoomReservation from '@/components/reservations/RoomReservation'
+
+Vue.component('room-reservation', RoomReservation)
 Vue.config.productionTip = false
 
 new Vue({

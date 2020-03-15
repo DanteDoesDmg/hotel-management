@@ -11,5 +11,4 @@ const store = new Vuex.Store({
   mutations: {},
   modules: modules
 });
-
 export default store;
