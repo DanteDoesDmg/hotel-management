@@ -8,7 +8,7 @@ export default {
       }
     ],
     testFloor: {
-      floorNumber: 20,
+      floorNumber: 1,
       floorRooms: ['101', '102', '103', '104'],
     }
   },
