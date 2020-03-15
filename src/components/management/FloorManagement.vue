@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" flat outlined >
+  <v-card class="mx-auto" flat outlined max-width="1300">
     <v-toolbar short>
       <v-tooltip bottom>
         <template v-slot:activator="{ on }">
@@ -21,7 +21,7 @@
     </v-toolbar>
     <v-card-text>
       <v-row justify="center" dense>
-        <v-col cols="5">
+        <v-col sm="8" md="6" lg="5">
           <p class="title text-center">
             Wpisz numery pięter i zakres numeracji pokojów/apartementów, które
             na nich występują
@@ -33,30 +33,36 @@
           </p>
         </v-col>
       </v-row>
-      <v-container>
-        <floor-edition/>
-        <v-row dense justify="center">
-          <v-btn color="primary">
-            Dodaj piętro
-            <v-icon right>mdi-plus-circle</v-icon>
-          </v-btn>
-        </v-row>
-      </v-container>
+      <v-row dense justify="center">
+        <v-col dense sm="8" md="6" lg="5">
+          <floor-edition :floor="testFloor" />
+        </v-col>
+      </v-row>
+      <v-row dense justify="center">
+        <v-btn color="primary">
+          Dodaj piętro
+          <v-icon right>mdi-plus-circle</v-icon>
+        </v-btn>
+      </v-row>
     </v-card-text>
     <v-card-actions>
       <v-spacer />
-      <v-btn color="success" > Dalej </v-btn>
+      <v-btn color="success"> Dalej </v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
-import FloorEdition from './FloorEdition'
+import FloorEdition from "./FloorEdition";
+import { mapState } from "vuex";
+
 export default {
-  components:{
-    'floor-edition': FloorEdition
+  components: {
+    "floor-edition": FloorEdition
   },
-  mounted() {}
+  computed:{
+    ...mapState('Management',['testFloor'])
+  }
 };
 </script>
 

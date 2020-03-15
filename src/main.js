@@ -8,9 +8,9 @@ import vuetify from './plugins/vuetify';
 import store from '@/store/store'
 
 
-import RoomReservation from '@/components/reservations/RoomReservation'
+import FloorManagement from '@/components/management/FloorManagement'
 
-Vue.component('room-reservation', RoomReservation)
+Vue.component('floor-management', FloorManagement)
 Vue.config.productionTip = false
 
 new Vue({
