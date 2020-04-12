@@ -13,11 +13,16 @@
         Piętra/numery pokojów
       </v-toolbar-title>
       <v-spacer />
-      <v-btn icon>
-        <v-icon>
-          mdi-bell-outline
-        </v-icon>
-      </v-btn>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on }">
+          <v-btn v-on="on" icon>
+            <v-icon>
+              mdi-bell-outline
+            </v-icon>
+          </v-btn>
+        </template>
+        <span>Powiadomienia</span>
+      </v-tooltip>
     </v-toolbar>
     <v-card-text>
       <v-row justify="center" dense>
